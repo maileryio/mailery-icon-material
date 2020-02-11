@@ -1,4 +1,4 @@
-# _____ Change Log
+# Material Design Icons Pack Change Log
 
 ## 1.0.0 under development
 

@@ -1,35 +1,43 @@
 {
-    "name": "maileryio/_____",
+    "name": "maileryio/mailery-icon-material",
     "type": "library",
-    "description": "_____",
+    "description": "Material Design Icons Pack for Mailery Platform",
     "keywords": [
-        "_____"
+        "mail",
+        "mailer",
+        "icon",
+        "material-design"
     ],
-    "homepage": "https://github.com/maileryio/_____",
+    "homepage": "https://github.com/maileryio/mailery-icon-material",
     "license": "BSD-3-Clause",
     "support": {
-        "source": "https://github.com/maileryio/_____",
-        "issues": "https://github.com/maileryio/_____/issues",
-        "wiki": "https://github.com/maileryio/_____/wiki"
+        "source": "https://github.com/maileryio/mailery-icon-material",
+        "issues": "https://github.com/maileryio/mailery-icon-material/issues",
+        "wiki": "https://github.com/maileryio/mailery-icon-material/wiki"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^7.4"
+        "php": "^7.4",
+        "maileryio/mailery-icon": "^1.0",
+        "yiisoft/arrays": "^3.0@dev",
+        "yiisoft/assets": "^1.0@dev",
+        "yiisoft/html": "^3.0@dev"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.0",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "hiqdev/composer-config-plugin": "^0.3.0",
         "phan/phan": "^2.4",
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
         "psr-4": {
-            "Mailery\\_____\\": "src"
+            "Mailery\\Icon\\Material\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mailery\\_____\\Tests\\": "tests"
+            "Mailery\\Icon\\Material\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -40,6 +48,11 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
+        },
+        "config-plugin": {
+            "common": [
+                "config/common.php"
+            ]
         }
     },
     "config": {
