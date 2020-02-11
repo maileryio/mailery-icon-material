@@ -11,8 +11,8 @@ declare(strict_types=1);
  */
 
 use Mailery\Icon\Material\MaterialDesignProvider;
-use Mailery\Icon\ProviderInterface as IconsProviderInterface;
+use Mailery\Icon\ProviderInterface;
 
 return [
-    IconsProviderInterface::class => MaterialDesignProvider::class,
+    ProviderInterface::class => MaterialDesignProvider::class,
 ];
