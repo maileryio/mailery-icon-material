@@ -19,55 +19,150 @@ use Yiisoft\Html\Html;
 
 class MaterialDesignProvider implements IconsProviderInterface
 {
-    /**
-     * @var array
-     */
-    private $mapNames = [];
 
     /**
-     * @var array
+     * @var bool
      */
-    private $validNames = ['menu', 'search', 'mail-outline', 'bell-outline',
-        'dots-horizontal', 'account-box', 'settings', 'logout', 'info-outline',
-        'arrow-down', 'arrow-right', 'dashboard', 'accessibility', 'add', 'view', 'edit', 'delete', ];
+    private bool $assetsRegistered = false;
+
+    /**
+     * @var AssetManager
+     */
+    private AssetManager $assetManager;
 
     /**
      * @param AssetManager $assetManager
      */
     public function __construct(AssetManager $assetManager)
     {
-        $assetManager->register([
-            MaterialDesignAsset::class,
-        ]);
+        $this->assetManager = $assetManager;
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function menu(array $options = []): string
+    {
+        return $this->render('menu', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function search(array $options = []): string
+    {
+        return $this->render('search', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function mailOutline(array $options = []): string
+    {
+        return $this->render('mail-outline', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function bellOutline(array $options = []): string
+    {
+        return $this->render('bell-outline', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function infoOutline(array $options = []): string
+    {
+        return $this->render('info-outline', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function settings(array $options = []): string
+    {
+        return $this->render('settings', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function accountBox(array $options = []): string
+    {
+        return $this->render('account-box', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function logout(array $options = []): string
+    {
+        return $this->render('logout', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function dotsHorizontal(array $options = []): string
+    {
+        return $this->render('dots-horizontal', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function dashboard(array $options = []): string
+    {
+        return $this->render('dashboard', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function arrowRight(array $options = []): string
+    {
+        return $this->render('arrow-right', $options);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function show(string $name, array $options = []): string
+    private function render(string $name, array $options = []): string
     {
-        if (($validName = $this->formatIconName($name)) === false) {
-            throw new \InvalidArgumentException('Invalid icon name "' . $name . '"');
-        }
+        $this->registerAssets();
 
-        $space = ArrayHelper::remove($options, 'space', true);
         $tag = ArrayHelper::remove($options, 'tag', 'i');
+        Html::addCssClass($options, 'icon-' . $name);
 
-        Html::addCssClass($options, 'icon-' . $validName);
-
-        return Html::tag($tag, '', $options) . ($space ? ' ' : '');
+        return Html::tag($tag, '', $options);
     }
 
     /**
-     * @param string $name
-     * @return false|string
+     * @return void
      */
-    private function formatIconName(string $name)
+    private function registerAssets()
     {
-        if (!in_array($name, $this->validNames, true)) {
-            return false;
+        if ($this->assetsRegistered) {
+            return;
         }
 
-        return $this->mapNames[$name] ?? $name;
+        $this->assetManager->register([
+            MaterialDesignAsset::class,
+        ]);
+        $this->assetsRegistered = true;
     }
+
 }
