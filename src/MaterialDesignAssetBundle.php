@@ -14,7 +14,7 @@ namespace Mailery\Icon\Material;
 
 use Yiisoft\Assets\AssetBundle;
 
-class MaterialDesignAsset extends AssetBundle
+class MaterialDesignAssetBundle extends AssetBundle
 {
     /**
      * {@inheritdoc}
@@ -30,6 +30,6 @@ class MaterialDesignAsset extends AssetBundle
      * {@inheritdoc}
      */
     public array $css = [
-        '//fonts.googleapis.com/icon?family=Material+Icons+Outlined',
+        '//cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css',
     ];
 }

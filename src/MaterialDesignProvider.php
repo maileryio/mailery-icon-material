@@ -44,7 +44,7 @@ class MaterialDesignProvider implements IconsProviderInterface
      */
     public function users(array $options = []): string
     {
-        return $this->render('users', $options);
+        return $this->render('account-multiple', $options);
     }
 
     /**
@@ -53,99 +53,62 @@ class MaterialDesignProvider implements IconsProviderInterface
      */
     public function dashboard(array $options = []): string
     {
-        return $this->render('dashboard', $options);
+        return $this->render('view-dashboard', $options);
     }
-//
-//
-//    /**
-//     * @param array $options
-//     * @return string
-//     */
-//    public function menu(array $options = []): string
-//    {
-//        return $this->render('menu', $options);
-//    }
-//
-//    /**
-//     * @param array $options
-//     * @return string
-//     */
-//    public function search(array $options = []): string
-//    {
-//        return $this->render('search', $options);
-//    }
-//
-//    /**
-//     * @param array $options
-//     * @return string
-//     */
-//    public function mailOutline(array $options = []): string
-//    {
-//        return $this->render('mail-outline', $options);
-//    }
-//
-//    /**
-//     * @param array $options
-//     * @return string
-//     */
-//    public function bellOutline(array $options = []): string
-//    {
-//        return $this->render('bell-outline', $options);
-//    }
-//
-//    /**
-//     * @param array $options
-//     * @return string
-//     */
-//    public function infoOutline(array $options = []): string
-//    {
-//        return $this->render('info-outline', $options);
-//    }
-//
-//    /**
-//     * @param array $options
-//     * @return string
-//     */
-//    public function settings(array $options = []): string
-//    {
-//        return $this->render('settings', $options);
-//    }
-//
-//    /**
-//     * @param array $options
-//     * @return string
-//     */
-//    public function accountBox(array $options = []): string
-//    {
-//        return $this->render('account-box', $options);
-//    }
-//
-//    /**
-//     * @param array $options
-//     * @return string
-//     */
-//    public function logout(array $options = []): string
-//    {
-//        return $this->render('logout', $options);
-//    }
-//
-//    /**
-//     * @param array $options
-//     * @return string
-//     */
-//    public function dotsHorizontal(array $options = []): string
-//    {
-//        return $this->render('dots-horizontal', $options);
-//    }
-//
-//    /**
-//     * @param array $options
-//     * @return string
-//     */
-//    public function arrowRight(array $options = []): string
-//    {
-//        return $this->render('arrow-right', $options);
-//    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function plus(array $options = array()): string
+    {
+        return $this->render('plus', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function search(array $options = []): string
+    {
+        return $this->render('magnify', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function settings(array $options = []): string
+    {
+        return $this->render('settings', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function eye(array $options = []): string
+    {
+        return $this->render('eye', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function pencil(array $options = []): string
+    {
+        return $this->render('pencil', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function delete(array $options = []): string
+    {
+        return $this->render('delete', $options);
+    }
 
     /**
      * {@inheritdoc}
@@ -155,7 +118,7 @@ class MaterialDesignProvider implements IconsProviderInterface
         $this->registerAssets();
 
         $tag = ArrayHelper::remove($options, 'tag', 'i');
-        Html::addCssClass($options, 'icon-' . $name);
+        Html::addCssClass($options, 'mdi mdi-' . $name);
 
         return Html::tag($tag, '', $options);
     }
@@ -170,7 +133,7 @@ class MaterialDesignProvider implements IconsProviderInterface
         }
 
         $this->assetManager->register([
-            MaterialDesignAsset::class,
+            MaterialDesignAssetBundle::class,
         ]);
         $this->assetsRegistered = true;
     }
