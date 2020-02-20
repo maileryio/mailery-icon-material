@@ -21,11 +21,6 @@ class MaterialDesignProvider implements IconsProviderInterface
 {
 
     /**
-     * @var bool
-     */
-    private bool $assetsRegistered = false;
-
-    /**
      * @var AssetManager
      */
     private AssetManager $assetManager;
@@ -128,14 +123,9 @@ class MaterialDesignProvider implements IconsProviderInterface
      */
     private function registerAssets()
     {
-        if ($this->assetsRegistered) {
-            return;
-        }
-
         $this->assetManager->register([
             MaterialDesignAssetBundle::class,
         ]);
-        $this->assetsRegistered = true;
     }
 
 }
