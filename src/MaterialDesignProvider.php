@@ -64,6 +64,51 @@ class MaterialDesignProvider implements IconsProviderInterface
      * @param array $options
      * @return string
      */
+    public function plusCircle(array $options = []): string
+    {
+        return $this->render('plus-circle', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function plusCircleOutline(array $options = []): string
+    {
+        return $this->render('plus-circle-outline', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function heartOutline(array $options = []): string
+    {
+        return $this->render('heart-outline', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function checkCircle(array $options = []): string
+    {
+        return $this->render('check-circle', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function checkCircleOutline(array $options = []): string
+    {
+        return $this->render('check-circle-outline', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
     public function search(array $options = []): string
     {
         return $this->render('magnify', $options);
