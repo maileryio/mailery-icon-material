@@ -160,6 +160,15 @@ class MaterialDesignProvider implements IconsProviderInterface
     }
 
     /**
+     * @param array $options
+     * @return string
+     */
+    public function chevronDown(array $options = array()): string
+    {
+        return $this->render('chevron-down', $options);
+    }
+
+    /**
      * {@inheritdoc}
      */
     private function render(string $name, array $options = []): string
