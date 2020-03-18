@@ -169,6 +169,24 @@ class MaterialDesignProvider implements IconsProviderInterface
     }
 
     /**
+     * @param array $options
+     * @return string
+     */
+    public function chevronRight(array $options = array()): string
+    {
+        return $this->render('chevron-right', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function chevronLeft(array $options = array()): string
+    {
+        return $this->render('chevron-left', $options);
+    }
+
+    /**
      * {@inheritdoc}
      */
     private function render(string $name, array $options = []): string
