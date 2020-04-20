@@ -187,6 +187,24 @@ class MaterialDesignProvider implements IconsProviderInterface
     }
 
     /**
+     * @param array $options
+     * @return string
+     */
+    public function accountMultiple(array $options = array()): string
+    {
+        return $this->render('account-multiple', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function accountMultipleOutline(array $options = array()): string
+    {
+        return $this->render('account-multiple-outline', $options);
+    }
+
+    /**
      * {@inheritdoc}
      */
     private function render(string $name, array $options = []): string
