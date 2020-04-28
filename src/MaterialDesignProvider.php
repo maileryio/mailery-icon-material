@@ -19,7 +19,6 @@ use Yiisoft\Html\Html;
 
 class MaterialDesignProvider implements IconsProviderInterface
 {
-
     /**
      * @var AssetManager
      */
@@ -55,7 +54,7 @@ class MaterialDesignProvider implements IconsProviderInterface
      * @param array $options
      * @return string
      */
-    public function plus(array $options = array()): string
+    public function plus(array $options = []): string
     {
         return $this->render('plus', $options);
     }
@@ -163,7 +162,7 @@ class MaterialDesignProvider implements IconsProviderInterface
      * @param array $options
      * @return string
      */
-    public function chevronDown(array $options = array()): string
+    public function chevronDown(array $options = []): string
     {
         return $this->render('chevron-down', $options);
     }
@@ -172,7 +171,7 @@ class MaterialDesignProvider implements IconsProviderInterface
      * @param array $options
      * @return string
      */
-    public function chevronRight(array $options = array()): string
+    public function chevronRight(array $options = []): string
     {
         return $this->render('chevron-right', $options);
     }
@@ -181,7 +180,7 @@ class MaterialDesignProvider implements IconsProviderInterface
      * @param array $options
      * @return string
      */
-    public function chevronLeft(array $options = array()): string
+    public function chevronLeft(array $options = []): string
     {
         return $this->render('chevron-left', $options);
     }
@@ -190,7 +189,7 @@ class MaterialDesignProvider implements IconsProviderInterface
      * @param array $options
      * @return string
      */
-    public function accountMultiple(array $options = array()): string
+    public function accountMultiple(array $options = []): string
     {
         return $this->render('account-multiple', $options);
     }
@@ -199,7 +198,7 @@ class MaterialDesignProvider implements IconsProviderInterface
      * @param array $options
      * @return string
      */
-    public function accountMultipleOutline(array $options = array()): string
+    public function accountMultipleOutline(array $options = []): string
     {
         return $this->render('account-multiple-outline', $options);
     }
@@ -226,5 +225,4 @@ class MaterialDesignProvider implements IconsProviderInterface
             MaterialDesignAssetBundle::class,
         ]);
     }
-
 }
