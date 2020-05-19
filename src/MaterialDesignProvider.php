@@ -36,6 +36,24 @@ class MaterialDesignProvider implements IconsProviderInterface
      * @param array $options
      * @return string
      */
+    public function close(array $options = []): string
+    {
+        return $this->render('close', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function magnify(array $options = []): string
+    {
+        return $this->render('magnify', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
     public function users(array $options = []): string
     {
         return $this->render('account-multiple', $options);
