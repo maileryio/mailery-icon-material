@@ -222,6 +222,24 @@ class MaterialDesignProvider implements IconsProviderInterface
     }
 
     /**
+     * @param array $options
+     * @return string
+     */
+    public function clock(array $options = []): string
+    {
+        return $this->render('clock', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function clockOutline(array $options = []): string
+    {
+        return $this->render('clock-outline', $options);
+    }
+
+    /**
      * {@inheritdoc}
      */
     private function render(string $name, array $options = []): string
