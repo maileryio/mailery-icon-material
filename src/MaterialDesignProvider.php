@@ -243,9 +243,9 @@ class MaterialDesignProvider implements IconsProviderInterface
      * @param array $options
      * @return string
      */
-    public function rocket(array $options = []): string
+    public function campaign(array $options = []): string
     {
-        return $this->render('rocket', $options);
+        return $this->render('arrange-send-backward', $options);
     }
 
     /**
