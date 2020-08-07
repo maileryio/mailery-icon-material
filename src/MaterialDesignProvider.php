@@ -72,6 +72,15 @@ class MaterialDesignProvider implements IconsProviderInterface
      * @param array $options
      * @return string
      */
+    public function dashboardOutline(array $options = []): string
+    {
+        return $this->render('view-dashboard-outline', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
     public function plus(array $options = []): string
     {
         return $this->render('plus', $options);
@@ -246,6 +255,24 @@ class MaterialDesignProvider implements IconsProviderInterface
     public function campaign(array $options = []): string
     {
         return $this->render('arrange-send-backward', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function emailMultiple(array $options = array()): string
+    {
+        return $this->render('email-multiple', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function emailMultipleOutline(array $options = array()): string
+    {
+        return $this->render('email-multiple-outline', $options);
     }
 
     /**
