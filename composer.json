@@ -21,7 +21,7 @@
         "php": "^7.4",
         "foxy/foxy": "^1.0",
         "maileryio/mailery-icon": "dev-master",
-        "yiisoft/arrays": "^3.0@dev",
+        "yiisoft/arrays": "^1.0",
         "yiisoft/assets": "^1.0@dev",
         "yiisoft/html": "^3.0@dev"
     },
