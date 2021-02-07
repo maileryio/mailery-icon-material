@@ -276,6 +276,15 @@ class MaterialDesignProvider implements IconsProviderInterface
     }
 
     /**
+     * @param array $options
+     * @return string
+     */
+    public function at(array $options = array()): string
+    {
+        return $this->render('at', $options);
+    }
+
+    /**
      * {@inheritdoc}
      */
     private function render(string $name, array $options = []): string
