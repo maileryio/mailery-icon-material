@@ -294,7 +294,7 @@ class MaterialDesignProvider implements IconsProviderInterface
         $tag = ArrayHelper::remove($options, 'tag', 'i');
         Html::addCssClass($options, 'mdi mdi-' . $name);
 
-        return Html::tag($tag, '', $options);
+        return (string) Html::tag($tag, '', $options);
     }
 
     /**
