@@ -20,10 +20,7 @@
     "require": {
         "php": "^7.4",
         "foxy/foxy": "^1.0",
-        "maileryio/mailery-icon": "dev-master",
-        "yiisoft/arrays": "^1.0",
-        "yiisoft/assets": "^1.0",
-        "yiisoft/html": "^2.0"
+        "maileryio/mailery-icon": "dev-master"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
