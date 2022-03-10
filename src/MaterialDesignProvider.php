@@ -289,7 +289,7 @@ class MaterialDesignProvider implements IconsProviderInterface
      */
     private function render(string $name, array $options = []): string
     {
-        $this->registerAssets();
+        $this->assetManager->register(MaterialDesignAssetBundle::class);
 
         $tag = ArrayHelper::remove($options, 'tag', 'i');
         Html::addCssClass($options, 'mdi mdi-' . $name);
@@ -297,13 +297,4 @@ class MaterialDesignProvider implements IconsProviderInterface
         return (string) Html::tag($tag, '', $options);
     }
 
-    /**
-     * @return void
-     */
-    private function registerAssets()
-    {
-        $this->assetManager->register([
-            MaterialDesignAssetBundle::class,
-        ]);
-    }
 }
