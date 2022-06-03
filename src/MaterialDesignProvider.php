@@ -45,6 +45,15 @@ class MaterialDesignProvider implements IconsProviderInterface
      * @param array $options
      * @return string
      */
+    public function cancel(array $options = []): string
+    {
+        return $this->render('cancel', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
     public function magnify(array $options = []): string
     {
         return $this->render('magnify', $options);
@@ -129,6 +138,15 @@ class MaterialDesignProvider implements IconsProviderInterface
     public function checkCircleOutline(array $options = []): string
     {
         return $this->render('check-circle-outline', $options);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public function helpCircleOutline(array $options = []): string
+    {
+        return $this->render('help-circle-outline', $options);
     }
 
     /**
